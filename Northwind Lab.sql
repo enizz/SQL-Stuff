@@ -58,3 +58,12 @@ GROUP BY OrderID --Should be ProductID instead of OrderID?
 --EC2
 SELECT AVG(Quantity) as AverageQuantity, MAX(Quantity) as MaxQuantity, MIN(Quantity) as MinQuantity
 FROM [Order Details]
+--EC3
+SELECT * 
+FROM Customers
+WHERE City IN('London', 'Paris')
+--EC4
+SELECT * 
+FROM Customers
+RIGHT JOIN Orders ON Orders.CustomerID = Customers.CustomerID
+WHERE City IN('London', 'Paris')
